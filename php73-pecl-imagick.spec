@@ -153,6 +153,9 @@ cd NTS
 
 # Ignore know failed test on some ach (s390x, armv7hl, aarch64) with timeout
 rm tests/229_Tutorial_fxAnalyzeImage_case1.phpt
+# Ignore tests that fail with EL7 ImageMagick
+rm tests/bug20636.phpt
+rm tests/151_Imagick_subImageMatch_basic.phpt
 
 : upstream test suite for NTS extension
 TEST_PHP_EXECUTABLE=%{__php} \

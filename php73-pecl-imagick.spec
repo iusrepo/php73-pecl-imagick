@@ -17,7 +17,8 @@ Source0:        https://pecl.php.net/get/%{pecl_name}-%{version}%{?prever}.tgz
 
 BuildRequires:  pear1
 BuildRequires:  %{php}-devel
-BuildRequires:  ImageMagick-devel >= 6.2.4
+# https://github.com/Imagick/imagick/blob/3.4.2/ChangeLog#L83
+BuildRequires:  ImageMagick-devel >= 6.5.3.10
 
 Requires:       php(zend-abi) = %{php_zend_api}
 Requires:       php(api) = %{php_core_api}

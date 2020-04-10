@@ -9,7 +9,7 @@
 Summary:        Provides a wrapper to the ImageMagick library
 Name:           %{php}-pecl-%{pecl_name}
 Version:        3.4.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 License:        PHP
 URL:            https://pecl.php.net/package/%{pecl_name}
 
@@ -215,6 +215,9 @@ fi
 
 
 %changelog
+* Fri Apr 10 2020 Carl George <carl@george.computer> - 3.4.4-3
+- Rebuild for EL 7.8 ImageMagick
+
 * Thu May 16 2019 Matt Linscott <matt.linscott@gmail.com> - 3.4.4-2
 - Port from Fedora to IUS
 

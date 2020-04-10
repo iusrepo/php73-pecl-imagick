@@ -15,7 +15,8 @@ task:
   epel_script:      yum --assumeyes install https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
   toolchain_script: yum --assumeyes install yum-utils rpmdevtools @buildsys-build
   ius_script:       yum --assumeyes install https://repo.ius.io/ius-release-el$(rpm -E %rhel).rpm
-  testing_script:   yum-config-manager --enable ius-testing
+  # temporarily enable cr for 7.8 build
+  testing_script:   yum-config-manager --enable ius-testing,cr
   sources_script:   spectool --get-files $CIRRUS_REPO_NAME.spec
   srpm_script:      rpmbuild -bs $CIRRUS_REPO_NAME.spec
   builddep_script:  yum-builddep --assumeyes $HOME/rpmbuild/SRPMS/$CIRRUS_REPO_NAME-*.src.rpm

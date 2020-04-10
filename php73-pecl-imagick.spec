@@ -15,8 +15,9 @@ URL:            https://pecl.php.net/package/%{pecl_name}
 
 Source0:        https://pecl.php.net/get/%{pecl_name}-%{version}%{?prever}.tgz
 
-BuildRequires:  pear1
 BuildRequires:  %{php}-devel
+# build require pear1's dependencies to avoid mismatched php stacks
+BuildRequires:  pear1 %{php}-cli %{php}-common %{php}-xml
 # https://github.com/Imagick/imagick/blob/3.4.2/ChangeLog#L83
 BuildRequires:  ImageMagick-devel >= 6.5.3.10
 
